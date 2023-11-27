@@ -10,7 +10,7 @@
 #######################
 
 DEBUG        ?= OFF # ON to turn on debugging symbols
-CFG_OVERRIDE ?=     # Override default config file
+CFG_OVERRIDE ?= cfg/single-cluster.hjson    # Override default config file
 
 .DEFAULT_GOAL := help
 .PHONY: all clean
@@ -428,7 +428,7 @@ clean-vcs: clean-work
 # Build a small Occamy version (CVA6 + 1 cluster) for the VCU128 FPGA board
 .PHONY: fpga
 fpga:
-	${MAKE} -C fpga occamy_vcu128
+	${MAKE} -C u280_ready all
 
 ########
 # Util #
